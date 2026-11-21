@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#24151d" />
+  <title>الفصل الذي لم يُكتب بعد</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <main id="app">
+
+    <section id="loadingScreen" class="screen loading-screen">
+      <div class="loading-mark">الفصل</div>
+      <p>يجري إعداد المساحة...</p>
+    </section>
+
+    <section id="galleryScreen" class="screen gallery-screen hidden">
+
+      <header class="landing-header">
+        <p class="eyebrow">تجربة تفاعلية ثلاثية الأبعاد</p>
+        <h1>الفصل الذي لم يُكتب بعد</h1>
+        <p class="landing-subtitle">من جذورنا، نصنع المستقبل.</p>
+        <p class="landing-intro">
+          ثلاثة عوالم، وثلاث حكايات تشكّل ما نحن عليه وما يمكن أن نصبحه.
+        </p>
+      </header>
+
+      <div class="door-grid">
+
+        <button class="door-card roots-door" data-world="roots">
+          <span class="door-number">01</span>
+          <span class="door-symbol">✦</span>
+          <span class="door-title">الجذور</span>
+          <span class="door-description">حكاية البدايات والذاكرة</span>
+          <span class="door-enter">ادخلي العالم <span>←</span></span>
+        </button>
+
+        <button class="door-card identity-door" data-world="identity">
+          <span class="door-number">02</span>
+          <span class="door-symbol">❋</span>
+          <span class="door-title">الهوية</span>
+          <span class="door-description">ملامح المكان والثقافة والانتماء</span>
+          <span class="door-enter">ادخلي العالم <span>←</span></span>
+        </button>
+
+        <button class="door-card innovation-door" data-world="innovation">
+          <span class="door-number">03</span>
+          <span class="door-symbol">⌘</span>
+          <span class="door-title">الابتكار</span>
+          <span class="door-description">أفكار تتحول إلى إمكانات</span>
+          <span class="door-enter">ادخلي العالم <span>←</span></span>
+        </button>
+
+      </div>
+
+      <footer class="landing-footer">
+        <span>الفصل الذي لم يُكتب بعد</span>
+        <span>اكتشفي. تأمّلي. تخيّلي.</span>
+      </footer>
+
+    </section>
+
+    <section id="museumScreen" class="screen museum-screen hidden">
+
+      <div id="threeContainer"></div>
+
+      <header class="museum-topbar">
+        <div>
+          <p id="museumKicker" class="museum-kicker">عالم تفاعلي</p>
+          <h2 id="museumTitle">الجذور</h2>
+        </div>
+        <div class="museum-counter" id="museumCounter">01 / 05</div>
+      </header>
+
+      <button id="backButton" class="back-button" type="button">
+        ← العودة إلى العوالم
+      </button>
+
+      <div class="crosshair" id="crosshair"></div>
+
+      <div class="museum-hint" id="museumHint">
+        انقري على أي معروض لاستكشاف حكايته
+      </div>
+
+      <div class="controls-note" id="instructions">
+        <span>W A S D</span> للتحرّك
+        <span>الماوس</span> للنظر حولك
+        <span>النقر</span> لفتح المعروض
+      </div>
+
+      <button id="startExploring" class="start-exploring" type="button">
+        ابدئي الاستكشاف
+      </button>
+
+      <div id="exhibitModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="exhibitTitle">
+
+        <div class="modal-panel">
+
+          <button id="closeModal" class="modal-close" type="button" aria-label="إغلاق">
+            ×
+          </button>
+
+          <p id="exhibitCategory" class="modal-category">معروض</p>
+
+          <h3 id="exhibitTitle">عنوان المعروض</h3>
+
+          <p id="exhibitDescription" class="modal-description"></p>
+
+          <div class="modal-bottom">
+            <span id="exhibitIndex"></span>
+            <button id="continueButton" type="button">
+              متابعة الاستكشاف ←
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
